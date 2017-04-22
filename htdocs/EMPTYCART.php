@@ -6,7 +6,7 @@
 	$q = "SELECT * from Cart where Purchased = 0 and UserName = '".$_SESSION['name']."';";
 	$result = $db->query($q);
 	while($row = mysqli_fetch_array($result)){
-		$q = "insert into CART VALUES('$row[0]','$row[1]',$row[2],1) ON DUPLICATE KEY UPDATE Quantity = Quantity + $row[2];";
+		$q = "update ItemDB set quantity = quantity + $row[2] where ID = $row[1];";
 		$result2 = $db->query($q);
 		$q = "delete from cart where Purchased = 0 and UserName = '$row[0]' and ID = $row[1];";
 		$result2 = $db->query($q);

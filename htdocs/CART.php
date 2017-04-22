@@ -7,7 +7,7 @@
 		echo '<b>Currently No Items in the Cart!</b>';
 	}
 	else{
-		echo '<table class="table table-hover">';
+		$ctr = 1;
 		echo '<thead>';
 		echo '<tr>';
 		echo '<th>Category</th>';
@@ -27,9 +27,10 @@
 			echo "<td>$row[3]</td>";
 			echo "<td>$row[4]</td>";
 			echo "<td><img src = 'uploads/".$row[5]."' style='width:100px;height:100px;' /></td>";
+			echo "<td><a href = '' onclick = 'd2(this);' id = '$ctr'>Delete</a></td>";
 			echo '</tr>';
+			$ctr = $ctr + 1;
 		}
 		echo '</tbody>';
-		echo '</table>';
 	}
 ?>

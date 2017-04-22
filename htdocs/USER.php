@@ -55,7 +55,6 @@ else{
 					<input type="text" class="form-control" id="ITEMNAME" placeholder="">
 				</div>
 				<button type="submit" id = "SEARCH" class="btn btn-default btn-lg">SEARCH</button>
-				<button type="submit" id = "ADD-TO-CART" class="btn btn-default btn-lg">ADD TO CART</button>
 			</form>
 			<br>
 			<div id = "MINIBROWSE">
@@ -67,7 +66,11 @@ else{
 		<div id="CART" class="tab-pane fade in">
 			<span id = "err2" class="label label-default"></span>
 			<button type="submit" id = "CHECKOUT" class="btn btn-default btn-lg">CHECKOUT</button>
-			<div id = "MINIBROWSE2"></div>
+			<button type="submit" id = "EMPTYCART" class="btn btn-default btn-lg">EMPTY CART</button>
+			<div id = "MINIBROWSE2">
+				<table class="table table-bordered" id = "bt2" style = "width:50%;">
+				</table>
+			</div>
 		</div>
 	
 		<div id="HISTORY" class="tab-pane fade in">

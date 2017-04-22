@@ -15,8 +15,8 @@ $(document).ready(function() {
         url: 'CART.php',
         data: {},
 		success: function(response){
-			$("#MINIBROWSE2").empty();
-			$("#MINIBROWSE2").append(response);
+			$("#bt2").empty();
+			$("#bt2").append(response);
 		}
     });
 	
@@ -54,6 +54,18 @@ $(document).ready(function() {
         });
     });
 	
+	$('#EMPTYCART').click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'EMPTYCART.php',
+            data: {},
+			success: function(response){
+				location.reload();
+			}
+        });
+    });
+	
 	$('#SEARCH').click(function (e) {
         e.preventDefault();
         $.ajax({
@@ -69,29 +81,42 @@ $(document).ready(function() {
 			}
         });
     });
-	
-	$('#ADD-TO-CART').click(function (e) {
-        e.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: 'ADDCART.php',
-            data: {
-				category: $("#CATEGORY").val(),
-				itemname: $("#ITEMNAME").val()
-			},
-			success: function(response){
-				if(response == '0'){
-					$("#err1").empty();
-					$("#err1").append("The Item you selected is not present or matches to multiple items!! Please select carefully!!");
-				}
-				else if(response == '2'){
-					$("#err1").empty();
-					$("#err1").append("The Item Fields are empty!!");
-				}
-				else if(response == '1'){
-					location.reload();
-				}
-			}
-        });
-    });
 });
+
+function d(obj){
+	$.ajax({
+        type: 'POST',
+        url: 'ADDCARTCLICK.php',
+        data: {
+			category: $("#bt").find('tr:eq(' + obj.id + ') td:eq(0)').text(),
+			itemname: $("#bt").find('tr:eq(' + obj.id + ') td:eq(1)').text()
+		},
+		success: function(response){
+			if(response == '0'){
+				$("#err1").empty();
+				$("#err1").append("The Item you selected is not present or matches to multiple items!! Please select carefully!!");
+			}
+			else if(response == '2'){
+				$("#err1").empty();
+				$("#err1").append("The Item Fields are empty!!");
+			}
+			else if(response == '1'){
+				location.reload();
+			}
+		}
+    });
+}
+
+function d2(obj){
+	$.ajax({
+        type: 'POST',
+        url: 'EMPTYCARTCLICK.php',
+        data: {
+			category: $("#bt2").find('tr:eq(' + obj.id + ') td:eq(0)').text(),
+			itemname: $("#bt2").find('tr:eq(' + obj.id + ') td:eq(1)').text()
+		},
+		success: function(response){
+			location.reload();
+		}
+    });
+}

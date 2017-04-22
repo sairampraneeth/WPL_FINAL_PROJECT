@@ -6,6 +6,7 @@
 		echo '<b>Currently No Items! Sorry for the Inconvinience!</b>';
 	}
 	else{
+		$ctr = 1;
 		echo '<thead>';
 		echo '<tr>';
 		echo '<th>Category</th>';
@@ -21,7 +22,9 @@
 			echo "<td>$row[1]</td>";
 			echo "<td>$row[2]</td>";
 			echo "<td><img src = 'uploads/".$row[3]."' style='width:100px;height:100px;' /></td>";
+			echo "<td><a href = '' onclick = 'd(this);' id = '$ctr'>Add</a></td>";
 			echo '</tr>';
+			$ctr = $ctr + 1;
 		}
 		echo '</tbody>';
 	}
