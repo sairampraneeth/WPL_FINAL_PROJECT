@@ -1,0 +1,15 @@
+.img-fluid {
+	display: block;
+    margin: auto;
+    width: 40%;
+}
+
+#myCarousel {
+	width : 50%;
+}
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 300px;
+      margin: auto;
+}

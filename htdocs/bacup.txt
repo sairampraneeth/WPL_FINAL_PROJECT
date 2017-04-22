@@ -1,0 +1,6 @@
+create DATABASE ORO;
+use ORO;
+create TABLE UserDB(Username VARCHAR(100),Password VARCHAR(100),isAdmin BOOLEAN,PRIMARY KEY (Username));
+insert into UserDB VALUES('prantheadmin','$2y$10$OfRAw088nSPtU2aqMdifEu3PuCCCrgcB.KsOvnjfij.nipTGndOzq',TRUE);
+create table ItemDB( ID int NOT NULL AUTO_INCREMENT, Category Varchar(30) NOT NULL, ItemName Varchar(30) NOT NULL UNIQUE, Price Double NOT NULL, Quantity INT NOT NULL, Image VARCHAR(30) NOT NULL, PRIMARY KEY (ID));
+CREATE TABLE CART(UserName VARCHAR(100), ID INT, Quantity INT, Purchased int, FOREIGN KEY(UserName) REFERENCES UserDB(UserName), FOREIGN KEY(ID) REFERENCES ItemDB(ID), PRIMARY KEY(UserName, ID, Purchased));
