@@ -7,6 +7,7 @@
 		echo '<b>Currently No Items in the Cart!</b>';
 	}
 	else{
+		$price = 0;
 		$ctr = 1;
 		echo '<thead>';
 		echo '<tr>';
@@ -20,6 +21,7 @@
 		echo '</thead>';
 		echo '<tbody>';
 		while($row = mysqli_fetch_array($result)) {
+			$price = $price + $row[4];
 			echo '<tr>';
 			echo "<td>$row[0]</td>";
 			echo "<td>$row[1]</td>";
@@ -31,6 +33,14 @@
 			echo '</tr>';
 			$ctr = $ctr + 1;
 		}
+		echo '<tr>';
+		echo '<td></td>';
+		echo '<td></td>';
+		echo '<td></td>';
+		echo '<td><b>Net Total</b></td>';
+		echo '<td><b>'.$price.'</b></td>';
+		echo '<td></td>';
+		echo '</tr>';
 		echo '</tbody>';
 	}
 ?>

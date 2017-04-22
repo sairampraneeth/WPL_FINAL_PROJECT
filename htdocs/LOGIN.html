@@ -7,60 +7,102 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="LOGIN.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="LOGIN.js"></script>
 </head>
 <body>
-	<img src="MYTITLE.jpg" class="img-fluid" alt="Responsive image">
-	<span id = "err" class="label label-default"></span>
-	<form id = "login">
-	  <div class="input-group input-group-lg">
-		<label for="email">Username</label>
-		<input type="text" class="form-control input-lg" id="userid">
+	<nav class="navbar navbar-inverse bg-inverse text-center">
+		<a class="nav-item nav-link active" href="LOGIN.html" style = "font-size: 20px;color: white;">Home</a>
+		&nbsp
+		&nbsp
+		&nbsp
+		<a class="nav-item nav-link" href="#" style = "font-size: 20px;color: white;">Contact</a>
+		&nbsp
+		&nbsp
+		&nbsp
+		<a class="nav-item nav-link" href="#" style = "font-size: 20px;color: white;">About</a>
+		<button type="button" class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#myModal">Login</button>
+	</nav>
+
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Login</h4>
+		  </div>
+		  <div class="modal-body">
+			<span id = "err" class="label label-default"></span>
+			<form id = "login">
+			  <div class="input-group">
+				<label for="email">Username</label>
+				<input type="text" class="form-control input-md" id="userid">
+			  </div>
+			  <div class="input-group">
+				<label for="pwd">Password</label>
+				<input type="password" class="form-control input-md" id="pwd">
+			  </div>
+			  <br />
+			  <button type="submit" id = "LOGINB" class="btn btn-info btn-sm">LOGIN</button>
+			  <button type="submit" id = "CAB" class="btn btn-info btn-sm">CREATE ACCOUNT</button>
+			</form>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
 	  </div>
-	  <div class="input-group input-group-lg">
-		<label for="pwd">Password</label>
-		<input type="password" class="form-control input-lg" id="pwd">
-	  </div>
-	  <button type="submit" id = "LOGINB" class="btn btn-default btn-lg">LOGIN</button>
-	  <button type="submit" id = "CAB" class="btn btn-default btn-lg">CREATE ACCOUNT</button>
-	</form>
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-	  <!-- Indicators -->
-	  <ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-		<li data-target="#myCarousel" data-slide-to="2"></li>
-		<li data-target="#myCarousel" data-slide-to="3"></li>
-	  </ol>
-
-	  <!-- Wrapper for slides -->
-	  <div class="carousel-inner" role="listbox">
-		<div class="item active">
-		  <img src="pizza.jpg" alt="Chania">
-		</div>
-
-		<div class="item">
-		  <img src="pasta.jpg" alt="Chania">
-		</div>
-
-		<div class="item">
-		  <img src="salad.jpg" alt="Flower">
-		</div>
-
-		<div class="item">
-		  <img src="coke.jpg" alt="Flower">
-		</div>
-	  </div>
-
-	  <!-- Left and right controls -->
-	  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
-	  </a>
-	  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
-	  </a>
 	</div>
+
+	<img src="MYTITLE.jpg" class="img-fluid" alt="Responsive image" style="display: block;width: 500px;height: 200px;">
+	
+	<div class = "centercarousel" style = "position: absolute;left: 30%;">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		  
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+		  </ol>
+		  
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+			<div class="item active">
+			  <img src="pizza.jpg" alt=""  style="width:1000px;height:360px">
+			</div>
+
+			<div class="item">
+			  <img src="pasta.jpg" alt=""  style="width:1000px;height:360px">
+			</div>
+
+			<div class="item">
+			  <img src="salad.jpg" alt=""  style="width:1000px;height:360px">
+			</div>
+
+			<div class="item">
+			  <img src="coke.jpg" alt=""  style="width:1000px;height:360px">
+			</div>
+		  </div>
+
+		  <!-- Left and right controls -->
+		  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		  </a>
+		</div>
+		
+	</div>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<div class = "footer text-center"><i class="fa fa-copyright" aria-hidden="true">Copyrights 2017 - Sairam Praneeth Vegesana</i></div>
 </body>
 </html>

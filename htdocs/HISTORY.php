@@ -7,6 +7,7 @@
 		echo '<b>Currently No Items in your History!</b>';
 	}
 	else{
+		$price = 0;
 		echo '<table class="table table-hover">';
 		echo '<thead>';
 		echo '<tr>';
@@ -20,6 +21,7 @@
 		echo '</thead>';
 		echo '<tbody>';
 		while($row = mysqli_fetch_array($result)) {
+			$price = $price + $row[4];
 			echo '<tr>';
 			echo "<td>$row[0]</td>";
 			echo "<td>$row[1]</td>";
@@ -29,6 +31,14 @@
 			echo "<td><img src = 'uploads/".$row[5]."' style='width:100px;height:100px;' /></td>";
 			echo '</tr>';
 		}
+		echo '<tr>';
+		echo '<td></td>';
+		echo '<td></td>';
+		echo '<td></td>';
+		echo '<td><b>Net Total</b></td>';
+		echo '<td><b>'.$price.'</b></td>';
+		echo '<td></td>';
+		echo '</tr>';
 		echo '</tbody>';
 		echo '</table>';
 	}
