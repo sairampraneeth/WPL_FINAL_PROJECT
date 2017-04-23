@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#home").load("INSTOCK.php");
+	$("#bt").load("INSTOCK.php");
 	$("#menu1").load("OUTOFSTOCK.php");
 	
 	$('#ADD').click(function (e) {
@@ -23,8 +23,7 @@ $(document).ready(function() {
 					$("#err1").append("Input Fields cannot be empty!!");
 				}
 				else{
-					$("#err1").empty();
-					$("#err1").append("Item exists in database!! Updated Quantity value has been given instead!!");
+					location.reload(true);
 				}
 			}
         });
@@ -68,3 +67,17 @@ $(document).ready(function() {
         });
     });
 });
+
+function d(obj){
+	$.ajax({
+        type: 'POST',
+        url: 'DELETE.php',
+        data: {
+			category: $("#bt").find('tr:eq(' + obj.id + ') td:eq(0)').text(),
+			itemname: $("#bt").find('tr:eq(' + obj.id + ') td:eq(1)').text()
+		},
+		success: function(response){
+			location.reload();
+		}
+    });
+}

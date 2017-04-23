@@ -74,13 +74,13 @@
 		<div id="BROWSE" class="tab-pane fade in active">
 			<span id = "err1" class="label label-default"></span>
 			<form>
-				<div class="form-group">
-					<label for="formGroupExampleInput">Category</label>
-					<input type="text" class="form-control" id="CATEGORY" placeholder="">
+				<div class="input-group input-group-lg">
+					<label for="Category">Category</label>
+					<input type="text" class="form-control input-lg" id="CATEGORY">
 				</div>
-				<div class="form-group">
-					<label for="formGroupExampleInput2">Item Name</label>
-					<input type="text" class="form-control" id="ITEMNAME" placeholder="">
+				<div class="input-group input-group-lg">
+					<label for="ItemName">ItemName</label>
+					<input type="text" class="form-control input-lg" id="ITEMNAME">
 				</div>
 				<button type="submit" id = "SEARCH" class="btn btn-default btn-lg">SEARCH</button>
 			</form>

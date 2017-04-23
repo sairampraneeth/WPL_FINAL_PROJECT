@@ -33,7 +33,8 @@ else{
 	<div class="tab-content">
 	  
 	  <div id="home" class="tab-pane fade in active">
-		
+		<table id = "bt" class="table table-hover">
+		</table>
 	  </div>
 	  
 	  <div id="menu1" class="tab-pane fade">
