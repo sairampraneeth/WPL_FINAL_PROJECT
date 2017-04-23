@@ -27,7 +27,6 @@ else{
 	  <li class="active"><a data-toggle="tab" href="#home">IN-STOCK</a></li>
 	  <li><a data-toggle="tab" href="#menu1">OUT-OF-STOCK</a></li>
 	  <li><a data-toggle="tab" href="#menu2">ADD-STOCK</a></li>
-	  <li><a data-toggle="tab" href="#menu3">REMOVE-STOCK</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -66,21 +65,6 @@ else{
 		  </div>
 		  <button type="submit" id = "ADD" class="btn btn-default btn-lg">ADD</button>
 		</form>	
-	  </div>
-	  
-	  <div id="menu3" class="tab-pane fade">
-		<span id = "err2" class="label label-default"></span>
-		<form id = "delete-stock">
-		  <div class="input-group input-group-lg">
-			<label for="Category">Category</label>
-			<input type="text" class="form-control input-lg" id="Category2">
-		  </div>
-		  <div class="input-group input-group-lg">
-			<label for="ItemName">ItemName</label>
-			<input type="text" class="form-control input-lg" id="ItemName2">
-		  </div>
-		  <button type="submit" id = "DELETE" class="btn btn-default btn-lg">DELETE</button>
-		</form>
 	  </div>
 	</div>
 </body>
