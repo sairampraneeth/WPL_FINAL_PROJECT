@@ -1,11 +1,11 @@
 <?php
-session_start();
-if(isset($_SESSION['name'])){ //If session is registered
-	header( 'Content-Type: text/html; charset=utf-8' );
-}
-else{ 
-	header("location: LOGIN.html"); // Redirect to login.php page
-}
+	session_start();
+	if(isset($_SESSION['name'])){ //If session is registered
+		header( 'Content-Type: text/html; charset=utf-8' );
+	}
+	else{ 
+		header("location: LOGIN.html"); // Redirect to login.php page
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +18,9 @@ else{
 	<link rel="stylesheet" href="USER.css">
 </head>
 <body>
+
+	<button type="button" class="btn btn-info btn-lg pull-left" data-toggle="modal" data-target="#myModal">MY CART</button>
+	
 	<img src="MYTITLE.jpg" class="img-fluid" alt="Responsive image">
 	<button id = "LOGOUT" type="button" class="btn btn-primary btn-lg">LOGOUT</button>
 	<h1 class = "lead mark strong" id = "hellouser">
@@ -32,15 +35,40 @@ else{
 	  
 	  </li>
 	  
-	  <li><a data-toggle="tab" href="#CART">YOUR CART</a>
-	  
-	  </li>
-	  
-	  <li><a data-toggle="tab" href="#HISTORY">YOUR HISTORY</a>
+	  <li><a data-toggle="tab" href="#HISTORY">MY HISTORY</a>
 	  
 	  </li>
 	
 	</ul>
+	
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">MY CART</h4>
+		  </div>
+		  <div class="modal-body">
+			<div id="CART" class="tab-pane fade in">
+				<span id = "err2" class="label label-default"></span>
+				<button type="submit" id = "CHECKOUT" class="btn btn-default btn-lg">CHECKOUT</button>
+				<button type="submit" id = "EMPTYCART" class="btn btn-default btn-lg">EMPTY CART</button>
+				<div id = "MINIBROWSE2">
+					<table class="table table-bordered" id = "bt2" style = "width:50%;">
+					</table>
+				</div>
+			</div>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+	</div>
 	
 	<div class="tab-content">
 		<div id="BROWSE" class="tab-pane fade in active">
@@ -59,16 +87,6 @@ else{
 			<br>
 			<div id = "MINIBROWSE">
 				<table class="table table-bordered" id = "bt" style = "width:50%;">
-				</table>
-			</div>
-		</div>
-	
-		<div id="CART" class="tab-pane fade in">
-			<span id = "err2" class="label label-default"></span>
-			<button type="submit" id = "CHECKOUT" class="btn btn-default btn-lg">CHECKOUT</button>
-			<button type="submit" id = "EMPTYCART" class="btn btn-default btn-lg">EMPTY CART</button>
-			<div id = "MINIBROWSE2">
-				<table class="table table-bordered" id = "bt2" style = "width:50%;">
 				</table>
 			</div>
 		</div>

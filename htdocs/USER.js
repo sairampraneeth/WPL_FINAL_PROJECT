@@ -37,7 +37,7 @@ $(document).ready(function() {
             url: 'LOGOUT.php',
             data: {},
 			success: function(response){
-				window.location.replace("LOGIN.html");
+				window.location.replace("INDEX.html");
 			}
         });
     });

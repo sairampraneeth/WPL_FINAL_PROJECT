@@ -7,7 +7,9 @@
 	$db = mysqli_connect('localhost','root','root','oro');
 	$q = "INSERT into ItemDB(Category,ItemName,Quantity,Price,Image) VALUES('$category','$itemname',$quantity,$price,'$img');";
 	$result = $db->query($q);
-	if($result == TRUE){
+	if($category == "" or $itemname == "" or $quantity == "" or $img == "" or $price == "")
+		echo '2';
+	else if($result == TRUE){
 		echo '1';
 	}
 	else{

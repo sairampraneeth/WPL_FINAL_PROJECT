@@ -18,6 +18,10 @@ $(document).ready(function() {
 				if(response == '1'){
 					location.reload(true);
 				}
+				else if(response == '2'){
+					$("#err1").empty();
+					$("#err1").append("Input Fields cannot be empty!!");
+				}
 				else{
 					$("#err1").empty();
 					$("#err1").append("Item exists in database!! Updated Quantity value has been given instead!!");
@@ -39,6 +43,10 @@ $(document).ready(function() {
 				if(response == '1'){
 					location.reload(true);
 				}
+				else if(response == '2'){
+					$("#err2").empty();
+					$("#err2").append("Input Fields cannot be empty!!");
+				}
 				else{
 					location.reload(true);
 					$("#err2").empty();
@@ -55,7 +63,7 @@ $(document).ready(function() {
             url: 'LOGOUT.php',
             data: {},
 			success: function(response){
-				window.location.replace("LOGIN.html");
+				window.location.replace("INDEX.html");
 			}
         });
     });
